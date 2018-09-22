@@ -21,11 +21,11 @@
 				    
 				    <td><span><%= post.body %></span></td>
 
-				    <td><span><%=link_to "Show",post_path(post.id)%></span></td>
+				    <td><span><%=link_to "Show",post_path(post.id),class:"show_#{@post.id}"%></span></td>
 
-				    <td><span><%=link_to "Edit",edit_post_path(post.id)%></span></td>
+				    <td><span><%=link_to "Edit",edit_post_path(post.id),class:"edit_#{@post.id}"%></span></td>
 
-				    <td><span><%= link_to "Destroy", post_path(post.id), method: :delete, "data-confirm" => "本当に削除しますか？" %></span></td>
+				    <td><span><%= link_to "Destroy", post_path(post.id),class:"destroy_#{@post.id}", method: :delete, "data-confirm" => "本当に削除しますか？" %></span></td>
 
 				 <!--    <%=link_to "編集",edit_post_path(post.id)%> -->
 
@@ -45,10 +45,10 @@
 <%= form_for(@post) do |f| %>
  
     <label>Title</label><br>
-    <%= f.text_field :title %><br>
+    <%= f.text_field :title,class:"book_title" %><br>
  
     <label>Body</label><br>
-    <%= f.text_area :body %><br>
+    <%= f.text_area :body,class:"book_body"%><br>
  
     <%= f.submit 'Create Book' %>
  
